@@ -25,6 +25,8 @@ namespace AddressBook_ADO.NET
             Console.WriteLine(repository.EditContactUsingName("Neha", "Singh", "Friend") ? "Update done successfully\n" : "Update failed");
             /// UC5 Ability to  Deletes the contact with given first name and last name.
             Console.WriteLine(repository.DeleteContact("Neha", "Singh") ? "Deleted Contact successfully\n" : "Update failed");
+            /// UC6 Retrieves the contacts from a given state or city.
+            repository.RetrieveContactFromCityOrStateName();
         }
         /// UC 3: Adds the new contact into DB table.
         public static void AddNewContactDetails()
