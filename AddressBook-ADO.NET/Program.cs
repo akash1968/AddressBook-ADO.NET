@@ -17,6 +17,8 @@ namespace AddressBook_ADO.NET
             AddressBookRepository repository = new AddressBookRepository();
             ///UC1 Creating a method for checking for the validity of the connection.
             repository.EnsureDataBaseConnection();
+            /// UC2 Getting all the stored records in the address book service table by fetching all the records
+            repository.GetAllContact();
         }
     }
 }
