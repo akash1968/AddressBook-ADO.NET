@@ -19,6 +19,25 @@ namespace AddressBook_ADO.NET
             repository.EnsureDataBaseConnection();
             /// UC2 Getting all the stored records in the address book service table by fetching all the records
             repository.GetAllContact();
+            /// UC 3: Adds the new contact into DB table.
+            AddNewContactDetails();
+        }
+        /// UC 3: Adds the new contact into DB table.
+        public static void AddNewContactDetails()
+        {
+            AddressBookRepository repository = new AddressBookRepository();
+            AddressBookModel model = new AddressBookModel();
+            model.FirstName = "Neha";
+            model.LastName = "Singh";
+            model.Address = "MANSAROVAR";
+            model.City = "jaipur";
+            model.State = "Rajasthan";
+            model.Zip = 788776;
+            model.PhoneNumber = 887788779;
+            model.EmailId = "neha@gmail.com";
+            model.AddressBookName = "neha";
+            model.AddressBookType = "Friend";
+            Console.WriteLine(repository.AddDataToTable(model) ? "Record inserted successfully\n" : "Failed");
         }
     }
 }
